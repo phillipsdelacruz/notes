@@ -19,3 +19,7 @@ kubectl run busybox --image=busybox --rm -it --restart=Never -- wget 172.17.0.4:
 ```
 
 
+### List nodes showing CPU usage
+```
+kubectl get nodes -o custom-columns=NAME:.metadata.name,CPU:.status.allocatable.cpu,REQUESTS:.status.allocatable.requests.cpu,LIMITS:.status.allocatable.limits.cpu
+```
